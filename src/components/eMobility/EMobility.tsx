@@ -24,7 +24,7 @@ const EMobility = () => {
       <div className="card-list" data-selected="emobility">
         {items.map((item, index) => (
           <EMobilityItem
-            key={index}
+            key={`item_${index}`}
             title={item.title}
             subtitle={item.subtitle}
             image={item.image}
