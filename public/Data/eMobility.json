@@ -1,0 +1,15 @@
+[
+    {
+      "title": "E-SCOOTERS",
+      "subtitle": "Available only in Europe",
+      "image": "/images/eMobility/e-scooter.png",
+      "link": "/product/escooter"
+    },
+    {
+      "title": "E-BIKES",
+      "subtitle": "Available only in Europe",
+      "image": "/images/eMobility/e-bike.png",
+      "link": "/product/ebike"
+    }
+  ]
+  

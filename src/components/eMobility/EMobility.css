@@ -1,0 +1,9 @@
+.section-wrapper {
+  padding: 20px;
+  background-color: white;
+}
+
+.card-list {
+  display: flex;
+  gap: 20px;
+}
