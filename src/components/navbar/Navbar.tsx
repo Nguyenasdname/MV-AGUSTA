@@ -7,6 +7,7 @@ import { useState } from "react";
 import MotocycleMenu from "../motocycle/MotocycleMenu";
 import DropDown from "../dropDown/DropDown";
 import EMobility from "../eMobility/EMobility";
+import Catalogue from "../catalogue/Catalogue";
 interface NavLinkItems {
     to: string;
     label: string;
@@ -27,7 +28,7 @@ const Navbar = () => {
     const NavRight: NavLinkItems[] = [
         { to: "/company", label: "Company", menuNavItem: "" },
         { to: "/dealers", label: "Dealers", menuNavItem: "" },
-        { to: "/catalogue", label: "Catalogue", menuNavItem: "" }
+        { to: "/catalogue", label: "Catalogue", menuNavItem: <Catalogue /> }
     ]
 
     const RenderNavLink: any = (links: NavLinkItems[]) => {
