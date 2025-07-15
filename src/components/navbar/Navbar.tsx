@@ -66,13 +66,15 @@ const Navbar = () => {
                 </Col>
 
                 <Col md={4} className={`text-center ${hoverNav != false ? 'navHoverLogo' : 'navLogo'} `}
-                onMouseEnter={() => {
-                    setHoverNav(false)
-                    setActiveLink("")
-                    setItemsMenuHover(null)
-                }}
+                    onMouseEnter={() => {
+                        setHoverNav(false)
+                        setActiveLink("")
+                        setItemsMenuHover(null)
+                    }}
                 >
-                    <img src={hoverNav != false ? hoverLogoAgusta : logoAgusta} />
+                    <Link to="/">
+                        <img src={hoverNav != false ? hoverLogoAgusta : logoAgusta} />
+                    </Link>
                 </Col>
 
                 <Col md={4} className={`text-end items`}>

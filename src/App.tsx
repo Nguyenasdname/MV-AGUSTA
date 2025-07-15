@@ -4,14 +4,14 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import AppRoutes from './Routes/Route'
 import Navbar from './components/navbar/Navbar'
-import MotocycleMenu from './components/motocycle/MotocycleMenu'
+import HomePage from './pages/HomePage'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <Navbar/>
+      <HomePage />
       {AppRoutes}
     </>
   )
