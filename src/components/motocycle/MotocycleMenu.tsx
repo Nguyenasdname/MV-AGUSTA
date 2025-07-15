@@ -44,7 +44,7 @@ const RenderTypeMenu = (data: any, onHover: (type: string) => void, hover: strin
                             onAnimationStart={() => onHover(data[0].motoType)}
                         >
                             <Link className={`${hover === moto.motoType ? 'text-black' : 'text-secondary'}`}
-                                style={{ textDecoration: "none", fontWeight: "bolder", fontSize: "40 px", paddingBottom: "15px" }}
+                                style={{ textDecoration: "none", fontWeight: "bolder", fontSize: "40px", paddingBottom: "15px" }}
                                 to="">
                                 {moto.motoType}
                             </Link>
