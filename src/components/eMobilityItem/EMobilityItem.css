@@ -1,0 +1,68 @@
+.mobility-card {
+    flex: 1;
+    background: #e7e7e7;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    min-height: 630px;
+    display: flex;
+  }
+  
+  .mobility-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 24px;
+    padding-bottom: 180px; 
+    text-decoration: none;
+    color: black;
+    position: relative;
+  }
+  
+  .mobility-info {
+    z-index: 2;
+  }
+  
+  .mobility-title {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 4px;
+  }
+  
+  .mobility-subtitle {
+    font-size: 15px;
+    color: #333;
+  }
+  
+  .mobility-image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    max-width: 90%;
+    height: auto;
+    object-fit: contain;
+    margin-top: 50px;
+    z-index: 1;
+  }
+  
+  .mobility-cta {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #111;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .mobility-cta.visible {
+    opacity: 1;
+  }
+
+  .mobility-cta.hidden {
+    opacity: 0;
+  }
+  
