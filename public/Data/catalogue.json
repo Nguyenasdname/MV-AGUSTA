@@ -1,0 +1,14 @@
+[
+    {
+        "title": "SPECIAL PARTS",
+        "subtitle": "Up grade to next level",
+        "image": "/images/catalogue/parts_exhaust.png",
+        "link": "/store/special_parts"
+    },
+    {
+        "title": "APPAREL",
+        "subtitle": "We ride it. We wear it",
+        "image": "/images/catalogue/apparel-store.png",
+        "link": "/store/apparel"
+    }
+]
