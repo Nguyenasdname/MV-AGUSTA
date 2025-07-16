@@ -12,11 +12,11 @@ const VehiclePreview = ({ moto }: { moto: Moto | null }) => {
                         {moto.limit ? 'Limited Edion' : 'New'}
                     </div>
                 )}
-                    <img style={{ width: "97%" }} src={moto.image} />
+                    <img style={{ width: "100%" }} src={moto.image} />
 
                     <Row>
                         <Col md={7}>
-                            <img style={{marginLeft: "100px"}} src={moto.logoImage}/>
+                            <img style={{marginLeft: "100px", width: "250px"}} src={moto.logoImage}/>
                         </Col>
                         <Col md={4} className="d-flex justify-content-between ms-5">
                             <div className="item text-left">

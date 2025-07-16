@@ -56,9 +56,9 @@ const Navbar = () => {
     return (
         <div className=""
             onMouseLeave={() => {
-                // setHoverNav(false)
-                // setItemsMenuHover(null)
-                // setActiveLink("")
+                setHoverNav(false)
+                setItemsMenuHover(null)
+                setActiveLink("")
             }}
         >
             <Row className={`mx-2 mt-3 px-4 py-2 navbar ${hoverNav != false ? 'bg-white ' : ''}`}>

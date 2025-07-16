@@ -58,7 +58,7 @@ const RenderTypeMenu = (data: any, onHover: (type: string) => void, hover: strin
     )
 }
 
-const RenderMotoCycleMenu = (data: any, setHoverMoto: (type: Moto) => void, hoverMoto: Moto | null) => {
+const RenderMotoCycleMenu = (data: any, setHoverMoto: (type: Moto | null) => void, hoverMoto: Moto | null) => {
     return (
         <>
             {data.length > 0 && ( //có data rồi mới render
@@ -68,6 +68,11 @@ const RenderMotoCycleMenu = (data: any, setHoverMoto: (type: Moto) => void, hove
                     animate="visible"
                     variants={listVariants}
                     style={{ listStyle: "none" }}
+                    onMouseLeave={() => {
+                        if (hoverMoto == null) {
+                            setHoverMoto(null)
+                        }
+                    }}
                 >
                     {data.map((moto: any, index: number) => (
                         <motion.li
@@ -127,13 +132,21 @@ const MotocycleMenu = () => {
 
             </Col>
             <Col md={3} >
-                <div style={{ borderLeft: "0.1px solid black", height: "100%" }}>
+                <div
+                    style={{ borderLeft: "0.1px solid black", height: "100%", borderRight: "0.1px solid black" }}>
                     {RenderMotoCycleMenu(filterMoto, setHoverMoto, hoverMoto)}
                 </div>
 
             </Col>
-            <Col md={6} >
-                <div style={{ borderLeft: "0.1px solid black", alignItems: "center" }}>
+            <Col md={6}
+                onMouseEnter={() => {
+                    if (hoverMoto == null) {
+                        setHoverMoto(filterMoto[filterMoto.length - 1])
+                    }
+                }}
+                onMouseLeave={() => setHoverMoto(null)}
+            >
+                <div style={{ alignItems: "center", height: "595px" }}>
                     <VehiclePreview moto={hoverMoto} />
                 </div>
             </Col>
