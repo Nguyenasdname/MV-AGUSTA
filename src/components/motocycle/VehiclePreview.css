@@ -1,0 +1,43 @@
+.limit {
+    font-weight: bolder;
+    margin-left: 50px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    display: inline-block;
+    padding: 7px 7px;
+    position: absolute;
+    right: 43%;
+}
+
+.new {
+    font-weight: bolder;
+    margin-left: 50px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    display: inline-block;
+    padding: 7px 12px;
+    position: absolute;
+    right: 46%;
+}
+
+.main-content {
+    font-size: 45px;
+    font-weight: bold;
+    position: relative;
+    margin-bottom: 0
+}
+
+.sub-content {
+    font-size: 13px;
+    line-height: 0;
+}
+
+.note {
+    position: absolute;
+    margin-top: 7px;
+    font-weight: bolder;
+}
