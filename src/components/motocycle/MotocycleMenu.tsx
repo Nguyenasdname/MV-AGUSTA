@@ -45,7 +45,7 @@ const RenderTypeMenu = (data: { motoType: string, motoImage: string }[], onHover
                             onAnimationStart={() => onHover(data[0].motoType)}
                         >
                             <Link className={`${hover === moto.motoType ? 'text-black' : 'text-secondary'}`}
-                                style={{ textDecoration: "none", fontWeight: "bolder", fontSize: "35px", paddingBottom: "10px" }}
+                                style={{ textDecoration: "none", fontWeight: "bolder", fontSize: "30px", paddingBottom: "10px" }}
                                 to="">
                                 {moto.motoType}
                             </Link>
@@ -77,7 +77,7 @@ const RenderMotoCycleMenu = (data: Moto[], setHoverMoto: (type: Moto | null) => 
                         >
                             <Link
                                 className={`${hoverMoto && hoverMoto.motoName === moto.motoName ? 'text-black' : 'text-secondary'}`}
-                                style={{ textDecoration: "none", fontWeight: "bolder", fontSize: "35px" }}
+                                style={{ textDecoration: "none", fontWeight: "bolder", fontSize: "30px" }}
                                 to="">
                                 {moto.motoName}
                             </Link>
