@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom"
-import { motion } from "framer-motion"
+import { motion, type Variant, type Variants } from "framer-motion"
 import { use, useEffect, useState } from "react";
 import type { Moto } from "../../model/MotoModel";
 import { Col, Row } from "react-bootstrap";
 import VehiclePreview from "./VehiclePreview";
 
-const itemVariants: any = {
+const itemVariants: Variants = {
     hidden: { x: 20, opacity: 0 }, //từ phải sang trái
     visible: {
         x: 0,
@@ -16,7 +16,7 @@ const itemVariants: any = {
     },
 };
 
-const listVariants: any = {
+const listVariants: Variants = {
     hidden: {},
     visible: {
         transition: {
@@ -25,10 +25,10 @@ const listVariants: any = {
     },
 };
 
-const RenderTypeMenu = (data: any, onHover: (type: string) => void, hover: string) => {
+const RenderTypeMenu = (data: { motoType: string, motoImage: string }[], onHover: (type: string) => void, hover: string) => {
     return (
         <>
-            {data.length > 0 && ( //có data rồi mới render
+            {(data != null && data.length > 0) && ( //có data rồi mới render
                 <motion.ul
                     initial="hidden"
                     animate="visible"
@@ -58,21 +58,16 @@ const RenderTypeMenu = (data: any, onHover: (type: string) => void, hover: strin
     )
 }
 
-const RenderMotoCycleMenu = (data: any, setHoverMoto: (type: Moto | null) => void, hoverMoto: Moto | null) => {
+const RenderMotoCycleMenu = (data: Moto[], setHoverMoto: (type: Moto | null) => void, hoverMoto: Moto | null) => {
     return (
         <>
-            {data.length > 0 && ( //có data rồi mới render
+            {(data != null && data.length > 0) && ( //có data rồi mới render
                 <motion.ul
                     key={data.map((moto: Moto) => moto.motoName).join('-')}
                     initial="hidden"
                     animate="visible"
                     variants={listVariants}
                     style={{ listStyle: "none" }}
-                    onMouseLeave={() => {
-                        if (hoverMoto == null) {
-                            setHoverMoto(null)
-                        }
-                    }}
                 >
                     {data.map((moto: any, index: number) => (
                         <motion.li
