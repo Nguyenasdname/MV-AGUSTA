@@ -4,7 +4,7 @@
     border-radius: 10px;
     overflow: hidden;
     transition: box-shadow 0.3s ease;
-    min-height: 630px;
+    min-height: 500px;
     display: flex;
   }
   

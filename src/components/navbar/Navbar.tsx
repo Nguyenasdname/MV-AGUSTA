@@ -3,7 +3,7 @@ import { Col, Row } from "react-bootstrap";
 import './Navbar.css'
 import logoAgusta from '/images/Logo/logo-main.svg'
 import hoverLogoAgusta from '/images/Logo/logo-main-white.svg'
-import { useState } from "react";
+import React, { useState } from "react";
 import MotocycleMenu from "../motocycle/MotocycleMenu";
 import DropDown from "../dropDown/DropDown";
 import EMobility from "../eMobility/EMobility";
@@ -11,12 +11,12 @@ import Catalogue from "../catalogue/Catalogue";
 interface NavLinkItems {
     to: string;
     label: string;
-    menuNavItem: any;
+    menuNavItem: React.ReactNode;
 }
 
 const Navbar = () => {
     const [hoverNav, setHoverNav] = useState(false);
-    const [itemsMenuHover, setItemsMenuHover] = useState(null)
+    const [itemsMenuHover, setItemsMenuHover] = useState<React.ReactNode>(null)
     const [activeLink, setActiveLink] = useState("")
 
     const NavLeft: NavLinkItems[] = [
@@ -31,7 +31,7 @@ const Navbar = () => {
         { to: "/catalogue", label: "Catalogue", menuNavItem: <Catalogue /> }
     ]
 
-    const RenderNavLink: any = (links: NavLinkItems[]) => {
+    const RenderNavLink = (links: NavLinkItems[]) => {
         return links.map((link: NavLinkItems) => (
             <Link
                 key={link.to}

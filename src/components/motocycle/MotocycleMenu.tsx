@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
-import { motion, type Variant, type Variants } from "framer-motion"
-import { use, useEffect, useState } from "react";
+import { motion, type Variants } from "framer-motion"
+import { useEffect, useState } from "react";
 import type { Moto } from "../../model/MotoModel";
 import { Col, Row } from "react-bootstrap";
 import VehiclePreview from "./VehiclePreview";
@@ -35,7 +35,7 @@ const RenderTypeMenu = (data: { motoType: string, motoImage: string }[], onHover
                     variants={listVariants}
                     style={{ listStyle: "none", padding: 0 }}
                 >
-                    {data.map((moto: any, index: number) => (
+                    {data.map((moto: { motoType: string, motoImage: string }, index: number) => (
                         <motion.li className="d-flex justify-content-between"
                             key={'motoType_' + index} variants={itemVariants}
                             onMouseEnter={() => {
@@ -45,7 +45,7 @@ const RenderTypeMenu = (data: { motoType: string, motoImage: string }[], onHover
                             onAnimationStart={() => onHover(data[0].motoType)}
                         >
                             <Link className={`${hover === moto.motoType ? 'text-black' : 'text-secondary'}`}
-                                style={{ textDecoration: "none", fontWeight: "bolder", fontSize: "40px", paddingBottom: "10px" }}
+                                style={{ textDecoration: "none", fontWeight: "bolder", fontSize: "35px", paddingBottom: "10px" }}
                                 to="">
                                 {moto.motoType}
                             </Link>
@@ -69,7 +69,7 @@ const RenderMotoCycleMenu = (data: Moto[], setHoverMoto: (type: Moto | null) => 
                     variants={listVariants}
                     style={{ listStyle: "none" }}
                 >
-                    {data.map((moto: any, index: number) => (
+                    {data.map((moto: Moto, index: number) => (
                         <motion.li
                             key={'motoName_' + index} variants={itemVariants}
                             onMouseEnter={() => setHoverMoto(moto)}
@@ -77,7 +77,7 @@ const RenderMotoCycleMenu = (data: Moto[], setHoverMoto: (type: Moto | null) => 
                         >
                             <Link
                                 className={`${hoverMoto && hoverMoto.motoName === moto.motoName ? 'text-black' : 'text-secondary'}`}
-                                style={{ textDecoration: "none", fontWeight: "bolder", fontSize: "45px" }}
+                                style={{ textDecoration: "none", fontWeight: "bolder", fontSize: "35px" }}
                                 to="">
                                 {moto.motoName}
                             </Link>
@@ -141,7 +141,7 @@ const MotocycleMenu = () => {
                 }}
                 onMouseLeave={() => setHoverMoto(null)}
             >
-                <div style={{ alignItems: "center", height: "595px" }}>
+                <div style={{ alignItems: "center", height: "50%" }}>
                     <VehiclePreview moto={hoverMoto} />
                 </div>
             </Col>
